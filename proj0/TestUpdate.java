@@ -1,5 +1,5 @@
 /**
- *  Tests Body's update() method
+ *  Tests Planet's update() method
  */
 public class TestUpdate {
 
@@ -33,12 +33,12 @@ public class TestUpdate {
 
 
     /**
-     *  Checks the Body class to make sure update works.
+     *  Checks the Planet class to make sure update works.
      */
     private static void checkUpdate() {
         System.out.println("Checking update...");
 
-        Body b1 = new Body(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
+        Planet b1 = new Planet(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
 
         b1.update(2.0, 1.0, -0.5);
 
