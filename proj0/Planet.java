@@ -2,7 +2,7 @@ public class Planet{
 	public double xxPos, yyPos, xxVel, yyVel, mass;	/**Characteristics of 
 													  planet */
 	public String imgFileName;	//Image file name of planet
-	public static final double G = 6.67e-11;
+	static final double G = 6.67e-11;
 	/**Constructor 1 */
 	public Planet(double xP, double yP, double xV, 
 				  double yV, double m, String img){
