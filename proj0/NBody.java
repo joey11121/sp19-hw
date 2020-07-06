@@ -18,7 +18,7 @@ public class NBody{
 			double xV = in.readDouble();
 			double yV = in.readDouble();
 			double m = in.readDouble();
-			String gif = "images/" + in.readString();
+			String gif =  in.readString();
 			planetList[i] = new Planet(xP, yP, xV, yV, m, gif);
 		}
 		return planetList;

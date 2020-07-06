@@ -43,11 +43,11 @@ public class Planet{
 
 	/**t.calcForceExertedByX(Planet p) to calculate the force on x*/
 	public double calcForceExertedByX(Planet p){
-		return calcForceExertedBy(p) * Math.abs((this.xxPos - p.xxPos)) / calcDistance(p); 
+		return calcForceExertedBy(p) * (this.xxPos - p.xxPos) / calcDistance(p); 
 	}
 	/**t.calcForceExertedByY(Planet p) to calculate the force on y*/
 	public double calcForceExertedByY(Planet p){
-		return calcForceExertedBy(p) * Math.abs((this.yyPos - p.yyPos)) / calcDistance(p); 
+		return calcForceExertedBy(p) * (this.yyPos - p.yyPos) / calcDistance(p); 
 	}
 	/**t.calcNetForceExertedByX(planet[]) to calculate the net force on x*/
 	public double calcNetForceExertedByX(Planet[] L){
@@ -83,7 +83,7 @@ public class Planet{
 		this.yyPos += time * this.yyVel;
 	}
 	public void draw(){
-		StdDraw.picture(this.xxPos, this.yyPos, this.imgFileName);
+		StdDraw.picture(this.xxPos, this.yyPos, "images/" + this.imgFileName);
 	}
 }
 
