@@ -43,11 +43,11 @@ public class Planet{
 
 	/**t.calcForceExertedByX(Planet p) to calculate the force on x*/
 	public double calcForceExertedByX(Planet p){
-		return calcForceExertedBy(p) * (this.xxPos - p.xxPos) / calcDistance(p); 
+		return calcForceExertedBy(p) * (p.xxPos - this.xxPos) / calcDistance(p); 
 	}
 	/**t.calcForceExertedByY(Planet p) to calculate the force on y*/
 	public double calcForceExertedByY(Planet p){
-		return calcForceExertedBy(p) * (this.yyPos - p.yyPos) / calcDistance(p); 
+		return calcForceExertedBy(p) * (p.yyPos - this.yyPos) / calcDistance(p); 
 	}
 	/**t.calcNetForceExertedByX(planet[]) to calculate the net force on x*/
 	public double calcNetForceExertedByX(Planet[] L){
