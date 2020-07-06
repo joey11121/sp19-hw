@@ -38,7 +38,7 @@ public class Planet{
 	/**t.calcForceExertedBy(u) calculates the force between t and u.*/
 	public double calcForceExertedBy(Planet p){
 		double Dist = calcDistance(p);
-		return this.G * this.mass * p.mass / (Dist * Dist);	
+		return Planet.G * this.mass * p.mass / (Dist * Dist);	
 	}
 
 	/**t.calcForceExertedByX(Planet p) to calculate the force on x*/

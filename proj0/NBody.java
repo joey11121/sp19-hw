@@ -23,7 +23,7 @@ public class NBody{
 		}
 		return planetList;
 	}
-	/**Main function */
+	/**main method */
 	public static void main(String[] args){
 		double T = Double.parseDouble(args[0]), dt = Double.parseDouble(args[1]);
 		String filename = args[2];
