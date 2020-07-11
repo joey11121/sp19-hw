@@ -5,7 +5,7 @@ public class ArrayDeque<T>{
 	int front, rear;	//front == rear, then the list must be empty, front
 
 	public ArrayDeque(){
-		deque = (T[]) new object[8];
+		deque = (T[]) new Object[8];	//Object should be in capital.
 		len = 8;
 		size = 0;
 		front = 0;
@@ -53,7 +53,7 @@ public class ArrayDeque<T>{
 		return deque[index];
 	}
 	private void resize(){
-		T[] newDeque = (T) new object[len * 2];
+		T[] newDeque = (T[]) new Object[len * 2];
 		System.arraycopy(deque, 0, newDeque, 0, rear + 1);
 		System.arraycopy(deque, front, newDeque, front, len - front);
 		int diff = len - front;
