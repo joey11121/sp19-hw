@@ -43,11 +43,16 @@ public class ArrayDeque<T>{
 	}
 
 	public T removeFirst(){
-
+		T res = deque[front];
+		front = (front + 1) % len;
 		size--;
+		return res;
 	}
 	public T removeLast(){
+		T res = deque[rear];
+		rear = (rear - 1) % len;
 		size--;
+		return res;
 	}
 	public T get(int index){
 		return deque[index];

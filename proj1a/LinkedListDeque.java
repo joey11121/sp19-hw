@@ -13,6 +13,7 @@ public class LinkedListDeque<T>{
 		sentFront = new ListNode();
 		sentBack = new ListNode();
 		sentFront.next = sentBack;
+		sentBack.prev = sentFront;
 	}
 	public void addFirst(T it){
 		ListNode p = new ListNode();
