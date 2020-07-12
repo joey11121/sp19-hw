@@ -34,24 +34,24 @@ public class LinkedListDeque<T> {	//For convention java stye, <> is followed by 
 		size++;
  	}
 	public boolean isEmpty() {
-		if(size == 0) {
+		if (size == 0) {
 			return true;
 		}		
 		return false;
 	}
-	public int size(){
+	public int size() {
 		return size;
 	}
 	public void printDeque() {
 		ListNode curr = sentFront.next;
-		while(curr != sentBack) {
+		while (curr != sentBack) {
 			System.out.println(curr.item);
 			curr = curr.next;
 		}		
 	}
 
 	public T removeFirst() {
-		if(size == 0) {
+		if (size == 0) {
 			return null;
 		}
 		ListNode p = sentFront.next;
@@ -63,7 +63,7 @@ public class LinkedListDeque<T> {	//For convention java stye, <> is followed by 
 		return p.item;
 	}
 	public T removeLast() {
-		if(size == 0) {
+		if (size == 0) {
 			return null;
 		}
 		ListNode p = sentBack.prev;
@@ -77,20 +77,20 @@ public class LinkedListDeque<T> {	//For convention java stye, <> is followed by 
 	public T get(int index) {
 		int i = 0; 
 		ListNode p = sentFront.next;
-		while(i != index) {
+		while (i != index) {
 			p = p.next;
 			i++;
 		}
 		return p.item;
 	}
 	private T getRecurSup(ListNode p, int i) {
-		if(i == 0) {
+		if (i == 0) {
 			return p.item;
-		}else {
+		} else {
 			return getRecurSup(p.next, i - 1);
 		}
 	}
-	public T getRecursive(int index){
+	public T getRecursive(int index) {
 		return getRecurSup(sentFront.next, index);
 	}
 }

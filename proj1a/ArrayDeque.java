@@ -4,7 +4,7 @@ public class ArrayDeque<T> {
 	private int len; // The length of array.
 	private int nextFirst, nextLast;	//nextFirst == rear, then the list must be empty, nextFirst
 
-	public ArrayDeque(){
+	public ArrayDeque() {
 		deque = (T[]) new Object[8];	//Object should be in capital.
 		len = deque.length;
 		size = 0;
@@ -12,15 +12,15 @@ public class ArrayDeque<T> {
 		nextLast = 1;
 	}
 	public void addFirst(T item) {
-		if(size == len) {
+		if (size == len) {
 			increaseLength();
 		}
 		deque[nextFirst] = item;
-		nextFirst = (nextFirst - 1) < 0? (nextFirst + 8) % len : (nextFirst - 1) % len;
+		nextFirst = ((nextFirst - 1) < 0) ? ((nextFirst + 7) % len) : ((nextFirst - 1) % len);
 		size++;
 	}
 	public void addLast(T item) {
-		if(size == len) {
+		if (size == len) {
 			increaseLength();
 		}
 		deque[nextLast] = item;
@@ -28,7 +28,7 @@ public class ArrayDeque<T> {
 		size++;
 	}
 	public boolean isEmpty() {
-		if(size == 0)
+		if (size == 0)
 			return true;
 		return false;
 	}
@@ -38,34 +38,34 @@ public class ArrayDeque<T> {
 	}
 	public void printDeque() {
 		int i = (nextFirst + 1) % len;
-		while(i % len != nextLast) {
+		while (i % len != nextLast) {
 			System.out.println(deque[i]);
-			i = (i + 1) % len;
+			i++;
 		}
 	}
 	//[, nextfirst, , , , , ,nextlast]
 	public T removeFirst() {
-		if(size == 0) {
+		if (size == 0) {
 			return null;
 		}
 		nextFirst = (nextFirst + 1) % len;
 		T res = deque[nextFirst];
 		deque[nextFirst] = null;
 		size--;
-		if(size < len / 2 && len > 8) {
+		if (size < len / 2 && len > 4) {
 			decreaseLength();
 		}
 		return res;
 	}
 	public T removeLast() {
-		if(size == 0) {
+		if (size == 0) {
 			return null;
 		}
-		nextLast = (nextLast - 1) % len;
+		nextLast = (nextLast - 1) < 0 ? (nextLast + 15) % len : (nextLast - 1) % len;
 		T res = deque[nextLast];
 		deque[nextLast] = null;
 		size--;
-		if(size < len / 2) {
+		if (size < len / 2 && len > 4) {
 			decreaseLength();
 		}
 		return res;
@@ -74,7 +74,7 @@ public class ArrayDeque<T> {
 	public T get(int index) {
 		int start = (nextFirst + 1) % len;
 		index = (index + start) % len;
-		if(size == 0 && deque[index] == null) {
+		if (size == 0 && deque[index] == null) {
 			return null;
 		}
 		return deque[index];
@@ -82,11 +82,13 @@ public class ArrayDeque<T> {
 	private void increaseLength() {
 		T[] newDeque = (T[]) new Object[len * 2];
 		int start = (nextFirst + 1) % len;
-		int i = start, j = 0;
-		while(i % len!= nextLast) {
-			newDeque[j] = deque[i];
+		int i = 0;
+		int time = 0;
+		while (time < size) {
+			newDeque[i] = deque[start];
 			i++;
-			j++;
+			start = (start + 1) % len;
+			time++;
 		}
 		len = len * 2;
 		nextFirst = len - 1;
@@ -96,11 +98,12 @@ public class ArrayDeque<T> {
 	private void decreaseLength() {
 		T[] newDeque = (T[]) new Object[len / 2];
 		int start = (nextFirst + 1) % len;
-		int i = start, j = 0;
-		while(i % len != nextLast) {
-			newDeque[j] = deque[i];
+		int i = 0, time = 0;
+		while (time < size) {
+			newDeque[i] = deque[start];
 			i++;
-			j++;
+			start = (start + 1) % len;
+			time++;
 		}
 		len = len / 2;
 		nextFirst = len - 1;
