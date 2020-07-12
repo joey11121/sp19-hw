@@ -1,5 +1,4 @@
-public class LinkedListDeque<T> { //For convention java style, <> is followed by a spece.
-    //Instant variables for LinkedListDeque class. 
+public class LinkedListDeque<T> {
     private class ListNode {
         T item;
         ListNode prev;
@@ -9,12 +8,12 @@ public class LinkedListDeque<T> { //For convention java style, <> is followed by
     private ListNode sentFront;
     private ListNode sentBack;
     public LinkedListDeque() {
-		size = 0;
-		sentFront = new ListNode();
-		sentBack = new ListNode();
-		sentFront.next = sentBack;
-		sentBack.prev = sentFront;
-	}
+	    size = 0;
+	    sentFront = new ListNode();
+	    sentBack = new ListNode();
+	    sentFront.next = sentBack;
+	    sentBack.prev = sentFront;
+    }
 	public void addFirst(T it) {
 		ListNode p = new ListNode();
 		p.item = it;

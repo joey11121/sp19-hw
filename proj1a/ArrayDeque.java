@@ -1,11 +1,8 @@
 public class ArrayDeque<T> {
     private T[] deque;
-    /* The size of the deque. */
     private int size;
-    /* The length of array. */
     private int len;
 	private int nextFirst, nextLast;
-    /* Constructor of ArrayDeque */
     public ArrayDeque() {
 	    deque = (T[]) new Object[8];
 	    len = deque.length;
@@ -17,24 +14,24 @@ public class ArrayDeque<T> {
 	    if (size == len) {
 		    increaseLength();
 	    }
-		deque[nextFirst] = item;
-		nextFirst = ((nextFirst - 1) < 0) ? (nextFirst + (len - 1)) % len : (nextFirst - 1) % len;
-		size++;
+	    deque[nextFirst] = item;
+	    nextFirst = ((nextFirst - 1) < 0) ? (nextFirst + (len - 1)) % len : (nextFirst - 1) % len;
+	    size++;
 	}
-	public void addLast(T item) {
-		if (size == len) {
-			increaseLength();
-		}
-		deque[nextLast] = item;
-		nextLast = (nextLast + 1) % len;
-		size++;
-	}
-	public boolean isEmpty() {
-		if (size == 0) {
-			return true;
-		}
-		return false;
-	}
+    public void addLast(T item) {
+	    if (size == len) {
+		    increaseLength();
+	    }
+	    deque[nextLast] = item;
+	    nextLast = (nextLast + 1) % len;
+	    size++;
+    }
+    public boolean isEmpty() {
+	    if (size == 0) {
+		    return true;
+	    }
+	    return false;
+    }
 
 	public int size() {
 		return size;
