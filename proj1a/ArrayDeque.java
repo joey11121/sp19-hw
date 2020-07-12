@@ -12,7 +12,7 @@ public class ArrayDeque<T>{
 		nextLast = 1;
 	}
 	public void addFirst(T item){
-		if(size == len) {
+		if(size == len){
 			increaseLength();
 		}
 		deque[nextFirst] = item;
@@ -20,7 +20,7 @@ public class ArrayDeque<T>{
 		size++;
 	}
 	public void addLast(T item){
-		if(size == len) {
+		if(size == len){
 			increaseLength();
 		}
 		deque[nextLast] = item;
