@@ -1,5 +1,5 @@
 public class ArrayDeque<T> {
-	private T[] deque;
+    private T[] deque;
 	private int size; // The size of the deque.
 	private int len; // The length of array.
 	private int nextFirst, nextLast;	//nextFirst == rear, then the list must be empty, nextFirst
@@ -16,7 +16,7 @@ public class ArrayDeque<T> {
 			increaseLength();
 		}
 		deque[nextFirst] = item;
-		nextFirst = ((nextFirst - 1) < 0) ? ((nextFirst + 7) % len) : ((nextFirst - 1) % len);
+		nextFirst = ((nextFirst - 1) < 0) ? (nextFirst + (len - 1)) % len : (nextFirst - 1) % len;
 		size++;
 	}
 	public void addLast(T item) {
@@ -28,8 +28,9 @@ public class ArrayDeque<T> {
 		size++;
 	}
 	public boolean isEmpty() {
-		if (size == 0)
+		if (size == 0) {
 			return true;
+		}
 		return false;
 	}
 
@@ -61,7 +62,7 @@ public class ArrayDeque<T> {
 		if (size == 0) {
 			return null;
 		}
-		nextLast = (nextLast - 1) < 0 ? (nextLast + 15) % len : (nextLast - 1) % len;
+		nextLast = (nextLast - 1) < 0 ? (nextLast + (len - 1)) % len : (nextLast - 1) % len;
 		T res = deque[nextLast];
 		deque[nextLast] = null;
 		size--;

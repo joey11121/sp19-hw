@@ -76,13 +76,14 @@ public class ArrayDequeTest {
         printTestStatus(passed);
     }
 
-    /** Adds a lot of items to check whether the increaseLength() and decreaseLength() works fine. */
+    /** Adds a lot of items to check whether the increaseLength()
+     * and decreaseLength() works fine. */
     public static void resizeTest() {
         /** Test increaseLength */
         System.out.println("Running resize test for increaseLength().");
         ArrayDeque<Integer> lld1 = new ArrayDeque<>();
         // should be empty
-       for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 16; i++) {
             lld1.addLast(i);
         }
         boolean passed = checkSize(16, lld1.len);
@@ -102,6 +103,24 @@ public class ArrayDequeTest {
         addIsEmptySizeTest();
         addRemoveTest();
         resizeTest();
+        ArrayDeque<Integer> AD = new ArrayDeque<>();
+        int k;
+        AD.addLast(0);
+        k = AD.removeLast();
+        AD.addFirst(2);
+        AD.addLast(3);
+        AD.addFirst(4);
+        AD.addLast(5);
+        AD.addFirst(6);
+        AD.addLast(7);
+        AD.addLast(8);
+        AD.addFirst(9);
+        AD.addLast(10);
+        k = AD.removeFirst();
+        AD.addFirst(12);
+        AD.addFirst(13);
+        k = AD.removeLast();
+        k = AD.removeLast();
     }
 
 }
