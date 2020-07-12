@@ -1,8 +1,8 @@
-public class LinkedListDeque<T> { //For convention java stye, <> is followed by a spece.
+public class LinkedListDeque<T> { //For convention java style, <> is followed by a spece.
     //Instant variables for LinkedListDeque class. 
     private class ListNode {
         T item;
-	    ListNode prev;
+        ListNode prev;
 	    ListNode next;
 	}
 	private int size;
@@ -83,6 +83,7 @@ public class LinkedListDeque<T> { //For convention java stye, <> is followed by 
 		}
 		return p.item;
 	}
+	/* Support of getRecursive function to work recursively. */
 	private T getRecurSup(ListNode p, int i) {
 		if (i == 0) {
 			return p.item;
