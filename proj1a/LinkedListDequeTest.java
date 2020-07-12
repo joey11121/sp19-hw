@@ -1,15 +1,15 @@
 /** Performs some basic linked list tests. */
 public class LinkedListDequeTest {
     /* Utility method for printing out empty checks. */
-	public static boolean checkEmpty(boolean expected, boolean actual) {
+    public static boolean checkEmpty(boolean expected, boolean actual) {
 	    if (expected != actual) {
-	    	System.out.println("isEmpty() returned " + actual + ", but expected: " + expected);
-	    	return false;
+	        System.out.println("isEmpty() returned " + actual + ", but expected: " + expected);
+	        return false;
 		}
-		return true;
-	}
+	    return true;
+    }
 
-	/* Utility method for printing out empty checks. */
+    /* Utility method for printing out empty checks. */
 	public static boolean checkSize(int expected, int actual) {
 		if (expected != actual) {
 			System.out.println("size() returned " + actual + ", but expected: " + expected);

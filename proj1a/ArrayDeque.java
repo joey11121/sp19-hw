@@ -1,22 +1,22 @@
 public class ArrayDeque<T> {
-	private T[] deque;
-	/* The size of the deque. */
+    private T[] deque;
+    /* The size of the deque. */
     private int size;
     /* The length of array. */
     private int len;
 	private int nextFirst, nextLast;
-	/* Constructor of ArrayDeque */
-	public ArrayDeque() {
-		deque = (T[]) new Object[8];
-		len = deque.length;
-		size = 0;
-		nextFirst = 0;
-		nextLast = 1;
-	}
-	public void addFirst(T item) {
-		if (size == len) {
-			increaseLength();
-		}
+    /* Constructor of ArrayDeque */
+    public ArrayDeque() {
+	    deque = (T[]) new Object[8];
+	    len = deque.length;
+	    size = 0;
+	    nextFirst = 0;
+	    nextLast = 1;
+    }
+    public void addFirst(T item) {
+	    if (size == len) {
+		    increaseLength();
+	    }
 		deque[nextFirst] = item;
 		nextFirst = ((nextFirst - 1) < 0) ? (nextFirst + (len - 1)) % len : (nextFirst - 1) % len;
 		size++;

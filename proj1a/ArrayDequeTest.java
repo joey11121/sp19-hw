@@ -62,15 +62,12 @@ public class ArrayDequeTest {
 
 
         ArrayDeque<Integer> lld1 = new ArrayDeque<>();
-        // should be empty
         boolean passed = checkEmpty(true, lld1.isEmpty());
 
         lld1.addFirst(10);
-        // should not be empty
         passed = checkEmpty(false, lld1.isEmpty()) && passed;
 
         lld1.removeFirst();
-        // should be empty
         passed = checkEmpty(true, lld1.isEmpty()) && passed;
 
         printTestStatus(passed);
@@ -82,7 +79,6 @@ public class ArrayDequeTest {
         /** Test increaseLength */
         System.out.println("Running resize test for increaseLength().");
         ArrayDeque<Integer> lld1 = new ArrayDeque<>();
-        // should be empty
         for (int i = 0; i < 16; i++) {
             lld1.addLast(i);
         }

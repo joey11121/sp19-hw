@@ -5,10 +5,10 @@ public class LinkedListDeque<T> { //For convention java style, <> is followed by
         ListNode prev;
 	    ListNode next;
 	}
-	private int size;
-	private ListNode sentFront;
-	private ListNode sentBack;
-	public LinkedListDeque() {
+    private int size;
+    private ListNode sentFront;
+    private ListNode sentBack;
+    public LinkedListDeque() {
 		size = 0;
 		sentFront = new ListNode();
 		sentBack = new ListNode();
