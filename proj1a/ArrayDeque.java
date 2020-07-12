@@ -1,11 +1,13 @@
 public class ArrayDeque<T> {
-    private T[] deque;
-    private int size; // The size of the deque.
-    private int len; // The length of array.
-    private int nextFirst, nextLast; //nextFirst == rear, then the list must be empty, nextFirst
-
+	private T[] deque;
+	/* The size of the deque. */
+    private int size;
+    /* The length of array. */
+    private int len;
+	private int nextFirst, nextLast;
+	/* Constructor of ArrayDeque */
 	public ArrayDeque() {
-		deque = (T[]) new Object[8]; //Object should be in capital.
+		deque = (T[]) new Object[8];
 		len = deque.length;
 		size = 0;
 		nextFirst = 0;
@@ -44,7 +46,6 @@ public class ArrayDeque<T> {
 			i++;
 		}
 	}
-    //[, nextfirst, , , , , ,nextlast]
     public T removeFirst() {
 		if (size == 0) {
 			return null;
@@ -71,7 +72,6 @@ public class ArrayDeque<T> {
 		}
 		return res;
 	}
-    //In constant time, empty and index out of bound return null
 	public T get(int index) {
 		int start = (nextFirst + 1) % len;
 		index = (index + start) % len;

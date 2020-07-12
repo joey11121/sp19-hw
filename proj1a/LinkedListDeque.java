@@ -2,8 +2,8 @@ public class LinkedListDeque<T> { //For convention java stye, <> is followed by 
     //Instant variables for LinkedListDeque class. 
     private class ListNode {
         T item;
-   	    ListNode next;
 	    ListNode prev;
+	    ListNode next;
 	}
 	private int size;
 	private ListNode sentFront;

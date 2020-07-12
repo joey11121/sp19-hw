@@ -3,9 +3,8 @@ public class LinkedListDequeTest {
     /* Utility method for printing out empty checks. */
 	public static boolean checkEmpty(boolean expected, boolean actual) {
 	    if (expected != actual) {
-			System.out.println("isEmpty() returned " + actual 
-				+ ", but expected: " + expected);
-			return false;
+	    	System.out.println("isEmpty() returned " + actual + ", but expected: " + expected);
+	    	return false;
 		}
 		return true;
 	}
@@ -42,8 +41,6 @@ public class LinkedListDequeTest {
 
 		lld1.addFirst("front");
 		
-		// The && operator is the same as "and" in Python.
-		// It's a binary operator that returns true if both arguments true, and false otherwise.
 		passed = checkSize(1, lld1.size()) && passed;
 		passed = checkEmpty(false, lld1.isEmpty()) && passed;
 
@@ -71,11 +68,9 @@ public class LinkedListDequeTest {
 		boolean passed = checkEmpty(true, lld1.isEmpty());
 
 		lld1.addFirst(10);
-		// should not be empty 
 		passed = checkEmpty(false, lld1.isEmpty()) && passed;
 
 		lld1.removeFirst();
-		// should be empty 
 		passed = checkEmpty(true, lld1.isEmpty()) && passed;
 
 		printTestStatus(passed);
