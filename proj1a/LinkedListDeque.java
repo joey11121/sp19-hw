@@ -51,6 +51,9 @@ public class LinkedListDeque<T>{
 	}
 
 	public T removeFirst(){
+		if(size == 0){
+			return null;
+		}
 		ListNode p = sentFront.next;
 		sentFront.next = p.next;
 		p.next.prev = sentFront;
@@ -60,6 +63,9 @@ public class LinkedListDeque<T>{
 		return p.item;
 	}
 	public T removeLast(){
+		if(size == 0){
+			return null;
+		}
 		ListNode p = sentBack.prev;
 		p.prev.next = sentBack;
 		sentBack.prev = p.prev;
@@ -85,6 +91,6 @@ public class LinkedListDeque<T>{
 		}
 	}
 	public T getRecursive(int index){
-		return getRecurSup(this.sentFront.next, index);
+		return getRecurSup(sentFront.next, index);
 	}
 }
