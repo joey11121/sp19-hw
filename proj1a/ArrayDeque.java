@@ -32,6 +32,10 @@ public class ArrayDeque<T>{
 			return true;
 		return false;
 	}
+
+	public int size(){
+		return size;
+	}
 	public void printDeque(){
 		int i = (nextFirst + 1) % len;
 		while(i % len != nextLast){
