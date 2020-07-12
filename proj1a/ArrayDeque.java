@@ -1,8 +1,8 @@
 public class ArrayDeque<T> {
     private T[] deque;
-	private int size; // The size of the deque.
-	private int len; // The length of array.
-	private int nextFirst, nextLast;	//nextFirst == rear, then the list must be empty, nextFirst
+    private int size; // The size of the deque.
+    private int len; // The length of array.
+    private int nextFirst, nextLast;	//nextFirst == rear, then the list must be empty, nextFirst
 
 	public ArrayDeque() {
 		deque = (T[]) new Object[8];	//Object should be in capital.

@@ -1,9 +1,9 @@
-public class LinkedListDeque<T> {//For convention java stye, <> is followed by a spece.
-	//Instant variables for LinkedListDeque class. 
+public class LinkedListDeque<T> { //For convention java stye, <> is followed by a spece.
+    //Instant variables for LinkedListDeque class. 
     private class ListNode {
-	    T item;
-		ListNode next;	//<T>should be added
-		ListNode prev;
+        T item;
+   	    ListNode next; //<T>should be added
+	    ListNode prev;
 	}
 	private int size;
 	private ListNode sentFront;

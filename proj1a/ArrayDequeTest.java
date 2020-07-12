@@ -103,24 +103,24 @@ public class ArrayDequeTest {
         addIsEmptySizeTest();
         addRemoveTest();
         resizeTest();
-        ArrayDeque<Integer> AD = new ArrayDeque<>();
+        ArrayDeque<Integer> ad = new ArrayDeque<>();
         int k;
-        AD.addLast(0);
-        k = AD.removeLast();
-        AD.addFirst(2);
-        AD.addLast(3);
-        AD.addFirst(4);
-        AD.addLast(5);
-        AD.addFirst(6);
-        AD.addLast(7);
-        AD.addLast(8);
-        AD.addFirst(9);
-        AD.addLast(10);
-        k = AD.removeFirst();
-        AD.addFirst(12);
-        AD.addFirst(13);
-        k = AD.removeLast();
-        k = AD.removeLast();
+        ad.addLast(0);
+        k = ad.removeLast();
+        ad.addFirst(2);
+        ad.addLast(3);
+        ad.addFirst(4);
+        ad.addLast(5);
+        ad.addFirst(6);
+        ad.addLast(7);
+        ad.addLast(8);
+        ad.addFirst(9);
+        ad.addLast(10);
+        k = ad.removeFirst();
+        ad.addFirst(12);
+        ad.addFirst(13);
+        k = ad.removeLast();
+        k = ad.removeLast();
     }
 
 }
