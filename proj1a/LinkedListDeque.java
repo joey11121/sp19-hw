@@ -1,21 +1,21 @@
-public class LinkedListDeque<T>{
+public class LinkedListDeque<T> {	//For convention java stye, <> is followed by a spece.
 	//Instant variables for LinkedListDeque class. 
-	private class ListNode{
-		public T item;
-		public ListNode next;	//<T>should be added
-		public ListNode prev;
+	private class ListNode {
+		T item;
+		ListNode next;	//<T>should be added
+		ListNode prev;
 	}
 	private int size;
 	private ListNode sentFront;
 	private ListNode sentBack;
-	public LinkedListDeque(){
+	public LinkedListDeque() {
 		size = 0;
 		sentFront = new ListNode();
 		sentBack = new ListNode();
 		sentFront.next = sentBack;
 		sentBack.prev = sentFront;
 	}
-	public void addFirst(T it){
+	public void addFirst(T it) {
 		ListNode p = new ListNode();
 		p.item = it;
 		p.prev = sentFront;
@@ -24,7 +24,7 @@ public class LinkedListDeque<T>{
 		sentFront.next = p;
 		size++;
 	}
-	public void addLast(T it){
+	public void addLast(T it) {
 		ListNode p = new ListNode();
 		p.item = it;
 		p.prev = sentBack.prev;
@@ -33,8 +33,8 @@ public class LinkedListDeque<T>{
 		sentBack.prev = p;
 		size++;
  	}
-	public boolean isEmpty(){
-		if(size == 0){
+	public boolean isEmpty() {
+		if(size == 0) {
 			return true;
 		}		
 		return false;
@@ -42,16 +42,16 @@ public class LinkedListDeque<T>{
 	public int size(){
 		return size;
 	}
-	public void printDeque(){
+	public void printDeque() {
 		ListNode curr = sentFront.next;
-		while(curr != sentBack){
+		while(curr != sentBack) {
 			System.out.println(curr.item);
 			curr = curr.next;
 		}		
 	}
 
-	public T removeFirst(){
-		if(size == 0){
+	public T removeFirst() {
+		if(size == 0) {
 			return null;
 		}
 		ListNode p = sentFront.next;
@@ -62,8 +62,8 @@ public class LinkedListDeque<T>{
 		size--;
 		return p.item;
 	}
-	public T removeLast(){
-		if(size == 0){
+	public T removeLast() {
+		if(size == 0) {
 			return null;
 		}
 		ListNode p = sentBack.prev;
@@ -74,19 +74,19 @@ public class LinkedListDeque<T>{
 		size--;
 		return p.item;
 	}
-	public T get(int index){
+	public T get(int index) {
 		int i = 0; 
 		ListNode p = sentFront.next;
-		while(i != index){
+		while(i != index) {
 			p = p.next;
 			i++;
 		}
 		return p.item;
 	}
-	private T getRecurSup(ListNode p, int i){
-		if(i == 0){
+	private T getRecurSup(ListNode p, int i) {
+		if(i == 0) {
 			return p.item;
-		}else{
+		}else {
 			return getRecurSup(p.next, i - 1);
 		}
 	}
