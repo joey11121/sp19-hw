@@ -36,7 +36,7 @@ public class ArrayDequeTest {
             System.out.println("Running add/isEmpty/Size test.");
             System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
 
-            ArrayDeque<String> lld1 = new ArrayDeque<String>();
+            ArrayDeque<String> lld1 = new ArrayDeque<>();
 
             boolean passed = checkEmpty(true, lld1.isEmpty());
 
@@ -67,7 +67,7 @@ public class ArrayDequeTest {
 
             System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
 
-            ArrayDeque<Integer> lld1 = new ArrayDeque<Integer>();
+            ArrayDeque<Integer> lld1 = new ArrayDeque<>();
             // should be empty
             boolean passed = checkEmpty(true, lld1.isEmpty());
 
@@ -83,10 +83,34 @@ public class ArrayDequeTest {
 
         }
 
+        /** Adds a lot of items to check whether the increaseLength() and decreaseLength() works fine. */
+        public static void resizeTest() {
+            /** Test increaseLength */
+            System.out.println("Running resize test for increaseLength().");
+
+            ArrayDeque<Integer> lld1 = new ArrayDeque<>();
+            // should be empty
+            for(int i = 0; i < 16; i++){
+                lld1.addFirst(i);
+            }
+            boolean passed = checkSize(16, lld1.len);
+            printTestStatus(passed);
+
+            System.out.println("Running resize test for DecreaseLength().");
+
+            for(int i = 0; i < 9; i++){
+                lld1.removeFirst();
+            }
+            passed = checkSize(8, lld1.len);
+            printTestStatus(passed);
+
+        }
+
         public static void main(String[] args) {
             System.out.println("Running tests.\n");
             addIsEmptySizeTest();
             addRemoveTest();
+            resizeTest();
         }
 
     }
