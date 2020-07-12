@@ -1,7 +1,7 @@
 public class ArrayDeque<T> {
 	private T[] deque;
 	private int size; // The size of the deque.
-	public int len; // The length of array.
+	private int len; // The length of array.
 	private int nextFirst, nextLast;	//nextFirst == rear, then the list must be empty, nextFirst
 
 	public ArrayDeque(){
