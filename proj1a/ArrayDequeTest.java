@@ -1,4 +1,6 @@
-/** Performs some basic array deque tests. */
+/**
+ * Performs some basic array deque tests.
+ */
 public class ArrayDequeTest {
     /* Utility method for printing out empty checks. */
     public static boolean checkEmpty(boolean expected, boolean actual) {
@@ -19,7 +21,7 @@ public class ArrayDequeTest {
     }
 
     /* Prints a nice message based on whether a test passed.
-    * The \n means newline. */
+     * The \n means newline. */
     public static void printTestStatus(boolean passed) {
         if (passed) {
             System.out.println("Test passed!\n");
@@ -28,10 +30,12 @@ public class ArrayDequeTest {
         }
     }
 
-    /** Adds a few things to the array list, checking isEmpty() and size() are correct,
+    /**
+     * Adds a few things to the array list, checking isEmpty() and size() are correct,
      * finally printing the results.
-     *
-     * && is the "and" operation. */
+     * <p>
+     * && is the "and" operation.
+     */
     public static void addIsEmptySizeTest() {
         System.out.println("Running add/isEmpty/Size test.");
         ArrayDeque<String> lld1 = new ArrayDeque<>();
@@ -55,7 +59,9 @@ public class ArrayDequeTest {
 
     }
 
-    /** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
+    /**
+     * Adds an item, then removes an item, and ensures that dll is empty afterwards.
+     */
     public static void addRemoveTest() {
 
         System.out.println("Running add/remove test.");
@@ -73,8 +79,10 @@ public class ArrayDequeTest {
         printTestStatus(passed);
     }
 
-    /** Adds a lot of items to check whether the increaseLength()
-     * and decreaseLength() works fine. */
+    /**
+     * Adds a lot of items to check whether the increaseLength()
+     * and decreaseLength() works fine.
+     */
     public static void resizeTest() {
         /** Test increaseLength */
         System.out.println("Running resize test for increaseLength().");
