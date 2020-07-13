@@ -1,7 +1,7 @@
 public class ArrayDeque<T> {
     private T[] deque;
     private int size;
-    private int len;
+    public int len;
     private int nextFirst, nextLast;
 
     public ArrayDeque() {
