@@ -1,4 +1,4 @@
-public class ArrayDeque<T> implements Deque<T>{
+public class ArrayDeque<T> implements Deque<T> {
     private T[] deque;
     private int size;
     private int len;
@@ -11,6 +11,7 @@ public class ArrayDeque<T> implements Deque<T>{
         nextFirst = 0;
         nextLast = 1;
     }
+
     @Override
     public void addFirst(T item) {
         if (size == len) {
