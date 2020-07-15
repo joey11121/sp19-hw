@@ -20,20 +20,20 @@ public class TestPalindrome {
     @Test
     public void testIsPalindrome() {
         String s = "RoatataoR";
-        assertTrue("The test fails since isPalindrome" +
-                " should return false instead.", palindrome.isPalindrome(s));
+        assertTrue("The test fails since isPalindrome"
+                + " should return false instead.", palindrome.isPalindrome(s));
         s = "abccba";
-        assertTrue("The test fails since isPalindrome" +
-                " should return true instead.", palindrome.isPalindrome(s));
+        assertTrue("The test fails since isPalindrome"
+                + " should return true instead.", palindrome.isPalindrome(s));
     }
 
     @Test
     public void secondTestIsPalindrome() {
         OffByOne test = new OffByOne();
-        assertFalse("Overloaded isPalindrome" +
-                " should return true instead", palindrome.isPalindrome("abcddcba", test));
-        assertTrue("Overloaded isPalindrome" +
-                " should return false instead", palindrome.isPalindrome("flake", test));
+        assertFalse("Overloaded isPalindrome"
+                + " should return true instead", palindrome.isPalindrome("abcddcba", test));
+        assertTrue("Overloaded isPalindrome"
+                + " should return false instead", palindrome.isPalindrome("flake", test));
 
     }
 }

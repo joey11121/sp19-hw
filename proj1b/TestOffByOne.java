@@ -10,8 +10,10 @@ public class TestOffByOne {
     // Your tests go here.
     @Test
     public void testEqualChars() {
-        assertTrue("The test is not passed since it must be true.", offByOne.equalChars('a', 'b'));
-        assertFalse("The test is not passed since it must be false.", offByOne.equalChars('b', 'd'));
+        assertTrue("The test is not passed "
+                + "since it must be true.", offByOne.equalChars('a', 'b'));
+        assertFalse("The test is not passed"
+                + " since it must be false.", offByOne.equalChars('b', 'd'));
 
     }
 }
