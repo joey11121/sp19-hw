@@ -27,10 +27,10 @@ public class TestPalindrome {
                 + " should return true instead.", palindrome.isPalindrome(s));
         s = "";
         assertTrue("\"\" should return false.", palindrome.isPalindrome(s));
-        s = "b";
-        assertTrue("\"b\" should return false.", palindrome.isPalindrome(s));
-        s = "advsadfads";
-        assertFalse("The \"advsadfads\" "
+        s = "BABAB";
+        assertTrue("\"BABAB\" should return false.", palindrome.isPalindrome(s));
+        s = "ADjklafl";
+        assertFalse("The \"ADjklafl\" "
                 + "should return false.", palindrome.isPalindrome(s));
         assertFalse("The \"adfd\" "
                 + "should return false.", palindrome.isPalindrome("adfd"));

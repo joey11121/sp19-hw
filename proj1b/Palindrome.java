@@ -16,7 +16,7 @@ public class Palindrome {
     }
 
     private boolean isPalinRecur(int left, int right, Deque wordDeque) {
-        if (right <= left ) {
+        if (right <= left) {
             return true;
         }
         char a = (char) wordDeque.removeFirst();
