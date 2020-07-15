@@ -10,15 +10,21 @@ public class Palindrome {
 
 
     public boolean isPalindrome(String word) {
-        int left = 0, right = word.length() - 1;
-        while (right > left) {
-            if (word.charAt(left) - word.charAt(right) != 0) {
-                return false;
-            }
-            left++;
-            right--;
+        Deque wDeque = wordToDeque(word);
+        int l = 0, r = wDeque.size() - 1;
+        return isPalinRecur(l,  r, wDeque);
+    }
+
+    private boolean isPalinRecur(int left, int right, Deque wordDeque) {
+        if (right <= left ) {
+            return true;
         }
-        return true;
+        char a = (char) wordDeque.removeFirst();
+        char b = (char) wordDeque.removeLast();
+        if ((a - b) != 0) {
+            return false;
+        }
+        return isPalinRecur(left + 1, right - 1, wordDeque);
     }
 
     public boolean isPalindrome(String word, CharacterComparator cc) {

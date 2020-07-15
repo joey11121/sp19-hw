@@ -29,6 +29,12 @@ public class TestPalindrome {
         assertTrue("\"\" should return false.", palindrome.isPalindrome(s));
         s = "b";
         assertTrue("\"b\" should return false.", palindrome.isPalindrome(s));
+        s = "advsadfads";
+        assertFalse("The \"advsadfads\" "
+                + "should return false.", palindrome.isPalindrome(s));
+        assertFalse("The \"adfd\" "
+                + "should return false.", palindrome.isPalindrome("adfd"));
+
     }
 
     @Test

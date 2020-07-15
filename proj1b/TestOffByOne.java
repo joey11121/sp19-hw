@@ -17,7 +17,7 @@ public class TestOffByOne {
         assertTrue("The test is not passed "
                 + "since it must be true.", offByOne.equalChars('B', 'C'));
         assertFalse("The test is not passed"
-                + " since it must be false.", offByOne.equalChars('B', 'D'));
+                + " since it must be false.", offByOne.equalChars('B', 'c'));
         assertTrue("The test is not passed "
                 + "since it must be true.", offByOne.equalChars('&', '%'));
         assertFalse("The test is not passed"
