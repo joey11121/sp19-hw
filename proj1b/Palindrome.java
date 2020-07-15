@@ -12,7 +12,7 @@ public class Palindrome {
     public boolean isPalindrome(String word) {
         int left = 0, right = word.length() - 1;
         while (right > left) {
-            if (word.charAt(left) != word.charAt(right)) {
+            if (word.charAt(left) - word.charAt(right) != 0) {
                 return false;
             }
             left++;

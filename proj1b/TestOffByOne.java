@@ -14,6 +14,14 @@ public class TestOffByOne {
                 + "since it must be true.", offByOne.equalChars('a', 'b'));
         assertFalse("The test is not passed"
                 + " since it must be false.", offByOne.equalChars('b', 'd'));
+        assertTrue("The test is not passed "
+                + "since it must be true.", offByOne.equalChars('B', 'C'));
+        assertFalse("The test is not passed"
+                + " since it must be false.", offByOne.equalChars('B', 'D'));
+        assertTrue("The test is not passed "
+                + "since it must be true.", offByOne.equalChars('&', '%'));
+        assertFalse("The test is not passed"
+                + " since it must be false.", offByOne.equalChars('#', '%'));
 
     }
 }

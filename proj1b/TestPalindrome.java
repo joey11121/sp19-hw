@@ -19,12 +19,16 @@ public class TestPalindrome {
 
     @Test
     public void testIsPalindrome() {
-        String s = "RoatataoR";
+        String s = "aca";
         assertTrue("The test fails since isPalindrome"
                 + " should return false instead.", palindrome.isPalindrome(s));
         s = "abccba";
         assertTrue("The test fails since isPalindrome"
                 + " should return true instead.", palindrome.isPalindrome(s));
+        s = "";
+        assertTrue("\"\" should return false.", palindrome.isPalindrome(s));
+        s = "b";
+        assertTrue("\"b\" should return false.", palindrome.isPalindrome(s));
     }
 
     @Test
